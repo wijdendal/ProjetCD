@@ -1,0 +1,15 @@
+---
+# tasks file for docker-registry
+- name: Log into DockerHub
+  docker_login:
+    username: wijden
+    password: wijden1997
+    email: wijdendalhoumi97@gmail.com
+- name: Push to docker hub
+  ansible.builtin.shell: docker push  wijden/validation
+
+- name: Push to docker hub
+  docker_image:
+    name: "wijden/validation"
+    repository: wijden/validation
+    push: yes
